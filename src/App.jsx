@@ -13,6 +13,9 @@ import Categiors from "./components/Categiors/Categiors";
 import Male from "./components/Categiors/Male";
 import Female from "./components/Categiors/Female";
 import Kids from "./components/Categiors/Kids";
+import Topbar from "./components/Topbar/Topbar";
+import Profile from "./components/Profile/Profile";
+
 
 
 
@@ -27,11 +30,13 @@ function App() {
   return (
     <>
       <Router>
+        <Topbar/>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signin" element={<SignIn />} />
+          <Route path="/profile" element = {<Profile/>}/>
           <Route path="/contact" element={<Contact />} />
           <Route path="/addcart" element={<Addcart />} />
           <Route path="/orderdetails" element={<Orderdetails />} />

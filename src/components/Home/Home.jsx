@@ -93,6 +93,9 @@ function Home() {
       size: ' Size : 3, 4, 5, 6',
       iconUrl: <FaHeart />,
     },
+    
+   
+   
   ];
 
   {
@@ -122,7 +125,7 @@ function Home() {
 
   return (
     <>
-      <div className="max-w-[1400px] h-[500px] w-full m-auto py-10 px-4 relative group">
+      <div className="max-w-[1400px] h-[500px]  m-auto py-10 px-4 relative group">
         <div
           style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
           className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
@@ -153,18 +156,20 @@ function Home() {
         {/* cards */}
 
 
-        <div className="flex justify-center items-start flex-wrap bg-gray-100 gap-4 my-3">
+        
+
+
+
+
+      </div>
+
+      <div className="flex justify-center items-start flex-wrap bg-gray-100 gap-4 my-3">
 
           {cardsData.map((card, index) => (
             <Card key={index} imageUrl={card.imageUrl} title={card.title} description={card.description} payment={card.payment} offer={card.offer} off={card.off} size={card.size} iconUrl={card.iconUrl} />
           ))}
 
         </div>
-
-
-
-
-      </div>
 
     </>
   )
