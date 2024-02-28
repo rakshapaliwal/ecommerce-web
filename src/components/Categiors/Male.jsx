@@ -8,7 +8,7 @@ function Male() {
 
     const cardsData = [
         {
-            imageUrl: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
+            image_url: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
             title: 'Shirts',
             description: 'Chambray Shirts Or Versatile Henleys.',
             payment: '$40.00',
@@ -33,7 +33,7 @@ function Male() {
             <div className="flex justify-center items-start flex-wrap bg-gray-100 gap-4 my-3">
 
                 {cardsData.map((card, index) => (
-                    <Card key={index} imageUrl={card.imageUrl} title={card.title} description={card.description} payment={card.payment} offer={card.offer} off={card.off} size={card.size} />
+                    <Card key={index} image_url={card.image_url} title={card.title} description={card.description} payment={card.payment} offer={card.offer} off={card.off} size={card.size} />
                 ))}
 
             </div>

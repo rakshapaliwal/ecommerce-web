@@ -12,25 +12,25 @@ import { IoIosWallet } from "react-icons/io";
 function Profile() {
     return (
       <>
-        <div className=' flex justify-around'>
+        <div className=' flex flex-wrap justify-around'>
 
             {/* First Card */}
-            <div className=' border ml-4 shadow w-[25%] cursor-pointer'>
+            <div className=' sm:w-1/2 border ml-4 shadow w-[25%] cursor-pointer'>
                 <div className=' flex ml-8 justify-between'>
-                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className=' mt-3' width="40px" height="40px"></img>
+                    <img src='https://cdn-icons-png.flaticon.com/512/3135/3135715.png' className=' mt-3' width="60px" height="60px"></img>
                     <p className=' flex items-center mr-[65%] text-gray-400 font-bold'>Hello,</p>
                 </div>
                 <div className=' flex ml-[28%] mb-2 text-gray-400 font-bold'>
-                    <p>Raksha Paliwal</p>
+                    <p>John John</p>
                 </div>
-                <hr className='border-b my-4' />
+                {/* <hr className='border-b my-4' /> */}
 
             </div>
 
 
             {/* Second Card */}
 
-            <div className='border ml-4 mt-3 shadow w-[25%]'>
+            <div className=' sm:w-1/2 border ml-4 mt-3 shadow w-[25%]'>
                 <div className='flex ml-[50px] gap-5 mt-4 cursor-pointer'>
                     <FaWallet className='text-xl' />
                     <Link to="orderdetails">
@@ -81,7 +81,7 @@ function Profile() {
 
             </div>
 
-            <div className=' border ml-4 shadow w-[25%] mt-4'>
+            <div className=' sm:w-1/2 border ml-4 shadow w-[25%] mt-4'>
                 
                 <div className=' flex ml-[15%] mb-2 mt-4 text-gray-400 font-bold'>
                     <p>Frequently Visited:</p>

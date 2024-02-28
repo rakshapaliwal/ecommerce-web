@@ -9,7 +9,7 @@ function SignIn() {
     /*  main container */
     <div className="min-h-screen flex items-center justify-center bg-gray-100">
       {/*  Sign In container */}
-      <div className="bg-white p-5 rounded shadow-md w-96 ">
+      <div className="bg-white p-5 rounded shadow-md w-96">
         <h1 className="text-2xl font-semibold mb-4 text-center text-primeColor">Register</h1>
         <form>
 

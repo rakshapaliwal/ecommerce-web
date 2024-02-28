@@ -3,6 +3,7 @@ import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import Card from '../Card/Card';
 import { FaHeart } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 function Home() {
 
@@ -22,80 +23,80 @@ function Home() {
 
   const cardsData = [
     {
-      imageUrl: 'https://cdn.pixabay.com/photo/2016/03/27/22/16/fashion-1284496_640.jpg',
+      image_url: 'https://cdn.pixabay.com/photo/2016/03/27/22/16/fashion-1284496_640.jpg',
       description: 'Women Red Heal',
       payment: '$40.00',
       offer: '$15',
       off: '5 % off',
       size: ' Size : 3, 4, 5, 6',
-      iconUrl: <FaHeart />,
+      // iconUrl: <Link to="/wishlistpage"><FaHeart /></Link>
     },
     {
-      imageUrl: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
+      image_url: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
       description: 'Boys Shirts',
       payment: '$40.00',
       offer: '$15',
       off: '5 % off',
       size: ' Size : 3, 4, 5, 6',
-      iconUrl: <FaHeart />,
+      // iconUrl: <FaHeart />,
     },
     {
-      imageUrl: 'https://cdn.pixabay.com/photo/2016/03/27/22/16/fashion-1284496_640.jpg',
+      image_url: 'https://cdn.pixabay.com/photo/2016/03/27/22/16/fashion-1284496_640.jpg',
       description: 'Women Red Heal',
       payment: '$40.00',
       offer: '$15',
       off: '5 % off',
       size: ' Size : 3, 4, 5, 6',
-      iconUrl: <FaHeart />,
+      // iconUrl: <FaHeart />,
     },
     {
-      imageUrl: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
+      image_url: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
       description: 'Boys Shirts',
       payment: '$40.00',
       offer: '$15',
       off: '5 % off',
       size: ' Size : 3, 4, 5, 6',
-      iconUrl: <FaHeart />,
+      // iconUrl: <FaHeart />,
     },
     {
-      imageUrl: 'https://cdn.pixabay.com/photo/2016/03/27/22/16/fashion-1284496_640.jpg',
+      image_url: 'https://cdn.pixabay.com/photo/2016/03/27/22/16/fashion-1284496_640.jpg',
       description: 'Women Red Heal',
       payment: '$40.00',
       offer: '$15',
       off: '5 % off',
       size: ' Size : 3, 4, 5, 6',
-      iconUrl: <FaHeart />,
+      // iconUrl: <FaHeart />,
     },
     {
-      imageUrl: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
+      image_url: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
       description: 'Boys Shirts',
       payment: '$40.00',
       offer: '$15',
       off: '5 % off',
       size: ' Size : 3, 4, 5, 6',
-      iconUrl: <FaHeart />,
+      // iconUrl: <FaHeart />,
     },
     {
-      imageUrl: 'https://cdn.pixabay.com/photo/2016/03/27/22/16/fashion-1284496_640.jpg',
+      image_url: 'https://cdn.pixabay.com/photo/2016/03/27/22/16/fashion-1284496_640.jpg',
       description: 'Women Red Heal',
       payment: '$40.00',
       offer: '$15',
       off: '5 % off',
       size: ' Size : 3, 4, 5, 6',
-      iconUrl: <FaHeart />,
+      // iconUrl: <FaHeart />,
     },
     {
-      imageUrl: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
+      image_url: 'https://t3.ftcdn.net/jpg/03/34/79/68/360_F_334796865_VVTjg49nbLgQPG6rgKDjVqSb5XUhBVsW.jpg',
       description: 'Boys Shirts',
       payment: '$40.00',
       offer: '$15',
       off: '5 % off',
       size: ' Size : 3, 4, 5, 6',
-      iconUrl: <FaHeart />,
+      // iconUrl: <FaHeart />,
     },
-    
-   
-   
+
+
+
   ];
 
   {
@@ -123,22 +124,31 @@ function Home() {
     setCurrentIndex(slideIndex);
   };
 
+  // wishlist
+
+  const [wishlist, setWishlist] = useState([]);
+
+  const handleAddToWishlist = (index) => {
+    if (!wishlist.includes(index)) {
+      setWishlist([...wishlist, index]);
+    }
+  };
+
   return (
     <>
-      <div className="max-w-[1400px] h-[500px]  m-auto py-10 px-4 relative group">
+      <div className="max-w-[1400px] mx-auto py-10 px-4 relative group">
         <div
           style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
-          className="w-full h-full rounded-2xl bg-center bg-cover duration-500"
+          className="w-full h-[500px]  rounded-2xl bg-center bg-cover duration-500"
         ></div>
 
-        {/*Left Arow  */}
-        <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        {/* Left Arrow */}
+        <div className="hidden md:group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
           <BsChevronCompactLeft onClick={prevSlide} size={30} />
         </div>
 
-        {/*right Arow  */}
-
-        <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        {/* Right Arrow */}
+        <div className="hidden md:group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
           <BsChevronCompactRight onClick={nextSlide} size={30} />
         </div>
 
@@ -153,23 +163,16 @@ function Home() {
             </div>
           ))}
         </div>
-        {/* cards */}
-
-
-        
-
-
-
-
       </div>
 
       <div className="flex justify-center items-start flex-wrap bg-gray-100 gap-4 my-3">
 
-          {cardsData.map((card, index) => (
-            <Card key={index} imageUrl={card.imageUrl} title={card.title} description={card.description} payment={card.payment} offer={card.offer} off={card.off} size={card.size} iconUrl={card.iconUrl} />
-          ))}
+        {cardsData.map((card, index) => (
+          <Card key={index} image_url={card.image_url} title={card.title} description={card.description} payment={card.payment} offer={card.offer} off={card.off} size={card.size} iconUrl={card.iconUrl} onAddToWishlist={() => handleAddToWishlist(index)}
+          />
+        ))}
 
-        </div>
+      </div>
 
     </>
   )

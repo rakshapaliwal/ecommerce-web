@@ -7,7 +7,7 @@ function Kids() {
 
     const cardsData = [
         {
-            imageUrl: 'https://5.imimg.com/data5/SELLER/Default/2022/12/SN/PU/NA/3769275/whatsapp-image-2022-12-24-at-9-51-01-am-500x500.jpeg',
+            image_url: 'https://5.imimg.com/data5/SELLER/Default/2022/12/SN/PU/NA/3769275/whatsapp-image-2022-12-24-at-9-51-01-am-500x500.jpeg',
             title: 'Kids Pent',
             description: ' Pants and Trousers',
             payment: '$40.00',
@@ -32,7 +32,7 @@ function Kids() {
             <div className="flex justify-center items-start flex-wrap bg-gray-100 gap-4 my-3">
 
                 {cardsData.map((card, index) => (
-                    <Card key={index} imageUrl={card.imageUrl} title={card.title} description={card.description} payment={card.payment} offer={card.offer} off={card.off} size={card.size} />
+                    <Card key={index} image_url={card.image_url} title={card.title} description={card.description} payment={card.payment} offer={card.offer} off={card.off} size={card.size} />
                 ))}
                 
                

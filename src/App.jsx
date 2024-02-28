@@ -15,6 +15,8 @@ import Female from "./components/Categiors/Female";
 import Kids from "./components/Categiors/Kids";
 import Topbar from "./components/Topbar/Topbar";
 import Profile from "./components/Profile/Profile";
+import Product from "./components/Product/Product";
+import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
 
 
 
@@ -45,9 +47,11 @@ function App() {
           <Route path="/categiors/male" element={<Male />} />
           <Route path="/categiors/female" element={<Female />} />
           <Route path="/categiors/kids" element={<Kids />} />
+          <Route path="/product" element={<Product />} />
 
 
         </Routes>
+        <ScrollToTopButton/>
         <Footer />
       </Router>
     </>

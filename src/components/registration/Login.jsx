@@ -9,20 +9,20 @@ const Login = () => {
 
   return (
     /*  main container */
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
+    <div className="min-h-screen flex flex-col md:flex-row items-center justify-center bg-gray-100">
       {/*  welcome image  */}
-      <div
-        className="p-8 rounded shadow-md bg-cover w-96 bg-center h-96"
+      {/* <div
+        className="p-8 rounded shadow-md bg-cover w-full md:w-96 bg-center h-auto md:h-auto md:mr-4"
         style={{
           backgroundImage: `url("${welcome}")`,
           transform: "scaleX(-1)",
         }}
-      ></div>
+      ></div> */}
 
       {/*  Login container */}
-      <div className="bg-white p-5 rounded shadow-md w-96 h-96">
+      <div className="bg-white p-5 rounded shadow-md w-full md:w-96 h-96 md:h-auto">
         <h1 className="text-2xl font-semibold mb-4 text-center text-primeColor">Login</h1>
-        <form>
+        <form className="flex flex-col gap-4">
           <div className="mb-4">
             <label
               className="block text-gray-700 text-sm font-medium mb-2"
@@ -53,12 +53,11 @@ const Login = () => {
               placeholder="Enter your password"
             />
           </div>
-            <div className="flex items-center justify-between">
-            <Link><h6 className="text-[15px] text-primeColor px-1 py-1">Don't have account</h6></Link>
-            <Link><h6 className="text-[15px] text-primeColor  px-1 py-1">Forget Password</h6></Link>
-            </div>
+          <div className="flex items-center justify-between">
+            <Link to="/signin"><h6 className="text-[15px] text-primeColor px-1 py-1">Don't have an account</h6></Link>
+            <Link><h6 className="text-[15px] text-primeColor  px-1 py-1">Forgot Password</h6></Link>
+          </div>
 
-        
           <button
             type="submit"
             className="w-full bg-primeColor text-white py-2 rounded-md hover:bg-black transition duration-300"
@@ -69,7 +68,7 @@ const Login = () => {
           <h3 className="text-center py-2">or</h3>
           <div className="flex items-center justify-center gap-3">
             <Link><img src={googleLogo} alt="Google Logo" height="25" width="25" /></Link>
-           <Link><img src={facebookLogo} alt="Google Logo" height="27" width="27" /></Link> 
+            <Link><img src={facebookLogo} alt="Google Logo" height="27" width="27" /></Link>
           </div>
         </form>
       </div>
