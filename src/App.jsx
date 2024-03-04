@@ -17,6 +17,9 @@ import Topbar from "./components/Topbar/Topbar";
 import Profile from "./components/Profile/Profile";
 import Product from "./components/Product/Product";
 import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton";
+import SearchBar from "./components/SearchBar/SearchBar";
+import Checkout from "./components/Checkout/Checkout";
+import ProductDetails from "./components/ProductDetails/ProductDetails";
 
 
 
@@ -24,6 +27,7 @@ import ScrollToTopButton from "./components/ScrollToTopButton/ScrollToTopButton"
 function App() {
   const [count, setCount] = useState(0);
 
+ 
   
 
 
@@ -31,9 +35,12 @@ function App() {
 
   return (
     <>
+{/* Search bar */}
+    
       <Router>
         <Topbar/>
         <Navbar />
+        <SearchBar/>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
@@ -48,6 +55,10 @@ function App() {
           <Route path="/categiors/female" element={<Female />} />
           <Route path="/categiors/kids" element={<Kids />} />
           <Route path="/product" element={<Product />} />
+          <Route path="/checkout" element={<Checkout />} />
+          <Route path="/productdetails" element={<ProductDetails />} />
+
+
 
 
         </Routes>
