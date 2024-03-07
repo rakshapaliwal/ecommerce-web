@@ -268,7 +268,15 @@ function Checkout() {
             <div>
                 <label className=' flex'>
                     <input type="radio" name="addressType" value="option1" className='ml-4'  />
-                    <img src='https://w7.pngwing.com/pngs/332/615/png-transparent-phonepe-india-unified-payments-interface-india-purple-violet-text-thumbnail.png' width={20}/>
+                    <img src='https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqo1Kt6T0rrnQYWzGF9I2hlcO4J-dVtzAPDx3zMo7pTg&s' width={40} className=' ml-3 mt-3'/> 
+                </label>
+                <label className=' flex'>
+                    <input type="radio" name="addressType" value="option1" className='ml-4'  />
+                    <img src='https://avatars.githubusercontent.com/u/7713209?s=280&v=4' width={40} className=' ml-3 mt-3'/> 
+                </label>
+                <label className=' flex'>
+                    <input type="radio" name="addressType" value="option1" className='ml-4'  />
+                   <p className=' text-md font-semibold ml-3'>CASH ON </p>
                 </label>
             </div>
 

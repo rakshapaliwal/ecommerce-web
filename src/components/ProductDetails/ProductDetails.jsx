@@ -1,17 +1,33 @@
-import React from "react";
+import React,{useState, useEffect} from "react";
 import { FaHeart } from "react-icons/fa";
 import { FaCartArrowDown } from "react-icons/fa6";
 import { AiFillThunderbolt } from "react-icons/ai";
 import { Link } from "react-router-dom";
-
+import axios from 'axios';
 
 
 const ProductDetails = () => {
 
- 
+  const [postData, setPostData] = useState({
+    "user_id" : "65e2ba98db091f87e59f63c9",
+    "product_id" : "65e1cddcf099550ea380fbeb"
+  });
+
+  const [data, setData] = useState(null);
+  const handlePostRequest = async () => {
+    try {
+      const response = await axios.post('http://192.168.29.59:3000/add_to_cart', postData);
+      setData(response.data);
+    } catch (error) {
+      console.error('Error making API call:', error);
+    }
+  };
+  useEffect(() => {
+    handlePostRequest();
+  }, []); 
+  
   return (
     <div className="container mx-auto p-8 flex flex-wrap">
-      {/* Product Image */}
       <div className="w-full md:w-1/2">
         <img
           className="mb-4 rounded-lg w-full"
@@ -20,7 +36,6 @@ const ProductDetails = () => {
         />
       </div>
 
-      {/* Product Content */}
       <div className="w-full md:w-1/2 md:pl-8">
         <div className="max-w-2xl bg-white p-8 rounded shadow-md">
           <h1 className="text-3xl font-semibold mb-2">
@@ -39,7 +54,6 @@ const ProductDetails = () => {
             </p>
           </div>
 
-          {/* description */}
           <div className="mt-3">
             <p>
               Shirts design :- <br />
@@ -49,7 +63,6 @@ const ProductDetails = () => {
             </p>
           </div>
 
-          {/* Size Option */}
           <div className="mb-4 mt-3">
             <label className="text-gray-600">Size:</label>
             <select className="ml-2 p-2 border rounded">
@@ -59,10 +72,10 @@ const ProductDetails = () => {
             </select>
           </div>
 
-          {/* Action Buttons */}
           <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 mb-4">
-            <Link to="/addcart">
-              <button className="text-white bg-black p-2 px-4 flex gap-2">
+            <Link to="/cartlist">
+              <button className="text-white bg-black p-2 px-4 flex gap-2"
+              >
                 <FaCartArrowDown className="mt-1" /> Go to Cart
               </button>
             </Link>
@@ -71,7 +84,6 @@ const ProductDetails = () => {
                 <AiFillThunderbolt className="mt-1" /> Buy Now
               </button>
             </Link>
-           
           </div>
         </div>
       </div>

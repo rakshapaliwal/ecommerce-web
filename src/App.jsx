@@ -6,7 +6,7 @@ import Home from "./components/Home/Home";
 import Contact from "./components/Contact/Contact";
 import SignIn from "./components/registration/SignIn";
 import Footer from "./components/Footer/Footer";
-import Addcart from "./components/Addcart/Addcart";
+import Cartlist from "./components/Cartlist/Cartlist";
 import Orderdetails from "./components/Orderdetails/Orderdetails";
 import WishlistPage from "./components/WishlistPage/WishlistPage";
 import Categiors from "./components/Categiors/Categiors";
@@ -27,27 +27,27 @@ import ProductDetails from "./components/ProductDetails/ProductDetails";
 function App() {
   const [count, setCount] = useState(0);
 
- 
-  
+
+
 
 
 
 
   return (
     <>
-{/* Search bar */}
-    
+      {/* Search bar */}
+
       <Router>
-        <Topbar/>
+        <Topbar />
         <Navbar />
-        <SearchBar/>
+        {/* <SearchBar /> */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signin" element={<SignIn />} />
-          <Route path="/profile" element = {<Profile/>}/>
+          <Route path="/profile" element={<Profile />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/addcart" element={<Addcart />} />
+          <Route path="/cartlist" element={<Cartlist />} />
           <Route path="/orderdetails" element={<Orderdetails />} />
           <Route path="/wishlistpage" element={<WishlistPage />} />
           <Route path="/categiors" element={<Categiors />} />
@@ -62,7 +62,7 @@ function App() {
 
 
         </Routes>
-        <ScrollToTopButton/>
+        <ScrollToTopButton />
         <Footer />
       </Router>
     </>

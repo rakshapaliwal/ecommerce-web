@@ -3,19 +3,18 @@ import { FaHeart } from "react-icons/fa";
 import { FaCartArrowDown } from "react-icons/fa6";
 import { Link } from 'react-router-dom';
 
-
-
 const Card = (props) => {
 
-  const handleAddToCart = () => {
-    // Add your logic to add the product to the cart
-    console.log('Product added to cart!');
+  const handleAddToCart = (id) => {
+    // Update state with product ID
+    setProductId(id);
+    console.log(id);
+    // Perform other actions, e.g., navigate to a new URL
+    window.location.href = `/productdetails/${id}`;
   };
+ 
 
-
-
-
-  const { image_url, name, selling_price, discount, cost, size, iconUrl, iconUrl1, onAddToWishlist } = props;
+  const { image_url, name, selling_price, discount, cost, size, cartIcon, heartIcon, onAddToWishlist } = props;
 
   return (
     <div className="max-w-xs mx-auto bg-white shadow-md rounded-md overflow-hidden cursor-pointer transition duration-300 ease-in-out transform hover:scale-105">
@@ -48,11 +47,12 @@ const Card = (props) => {
 
         {/* Size */}
         <div className=' flex'>
-          <p className='text-gray-400'> Size : {size}</p>
+          <p className='text-gray-400'>  {size}</p>
           <div className=' flex justify-end gap-3 text-xl text-gray-700 ml-[100px]'>
-            <p className="cursor-pointer"
-              onClick={handleAddToCart}><Link to="/productdetails"><FaCartArrowDown /></Link></p>
-            <p> <FaHeart /></p>
+            <p className="cursor-pointer">
+              {cartIcon}
+              </p>
+            <p>{heartIcon}</p>
           </div>
 
 

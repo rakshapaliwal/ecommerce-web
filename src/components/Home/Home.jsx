@@ -4,7 +4,8 @@ import { RxDotFilled } from "react-icons/rx";
 import Card from '../Card/Card';
 import axios from 'axios';
 import { Link } from "react-router-dom";
-
+import { FaHeart } from "react-icons/fa";
+import { FaCartArrowDown } from "react-icons/fa6";
 
 
 function Home() {
@@ -22,13 +23,16 @@ function Home() {
   ];
 
   // card function to show
-
+  const handleAddToCart = (id) => {
+    // setProductId(productId);
+    window.location.href = `/productdetails`;
+  };
 
   const [data, setData] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://192.168.29.59:3000/product/get/8');
+        const response = await axios.get('http://192.168.29.59:3000/api/product/get/8');
         setData(response.data.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -37,7 +41,7 @@ function Home() {
 
     fetchData();
   }, []);
-
+ 
   {
     /*Slider function to show  */
   }
@@ -106,14 +110,26 @@ function Home() {
 
       {/* cards */}
       {data.length > 0 ? (
-        <div className="flex justify-center items-start flex-wrap bg-gray-100 gap-4 my-3">
-          {data.map(product => (
-            <Card key={product._id} image_url={product.image_url} name={product.name} selling_price={product.selling_price} discount={product.discount} cost={product.cost} size={JSON.parse(product.size)} />
-          ))}
-        </div>
-      ) : (
-        <p>Loading...</p>
-      )}
+  <div className="flex justify-center items-start flex-wrap bg-gray-100 gap-4 my-3">
+    {data.map(product => (
+      <div key={product._id}>
+          <Card
+            // key={index}
+            image_url={product.image.image}
+            name={product.name}
+            selling_price={product.selling_price}
+            discount={product.discount}
+            cost={product.cost}
+            cartIcon={<FaCartArrowDown onClick={() => handleAddToCart(product._id)} />}
+            heartIcon={<FaHeart />}
+          />
+      </div>
+    ))}
+  </div>
+) : (
+  <p>Loading...</p>
+)}
+
      
    
     </>
